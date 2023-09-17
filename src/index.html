@@ -7,29 +7,48 @@
     <link href="style.css" rel="stylesheet" type = "text/css"/>
 </head>
 <body>
-    <h1>hello world</h1>
+    <h1>Word Hunt Solver</h1>
 
     <form id = "letters">
          <div class="grid-container">
 
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
-            <div class="grid-item"><label> <input class="input" type="text" onkeyup="validate(this);"/> </label></div>
+            <div
+                    class="grid-item"><label> <input id='1' class="input" type="text" onkeyup="validate(this);"/> </label></div>
+            <div class="grid-item"><label> <input id='2' class="input" type="text" onkeyup="validate(this);"/> </label></div>
+            <div class="grid-item"><label> <input id='3' class="input" type="text" onkeyup="validate(this);"/> </label></div>
+            <div class="grid-item"><label> <input id='4' class="input" type="text" onkeyup="validate(this);"/> </label></div>
+            <div class="grid-item"><label> <input id='5' class="input" type="text" onkeyup="validate(this);"/> </label></div>
+            <div class="grid-item"><label> <input id='6' class="input" type="text" onkeyup="validate(this);"/> </label></div>
+            <div
+                    class="grid-item"><label> <input id='7' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div
+                    class="grid-item"><label> <input id='8' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div
+                    class="grid-item"><label> <input id='9' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div
+                    class="grid-item"><label> <input id='10' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div
+                    class="grid-item"><label> <input id='11' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div class="grid-item"><label> <input id='12' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div
+                    class="grid-item"><label> <input id='13' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div class="grid-item"><label> <input id='14' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div
+                    class="grid-item"><label> <input id='15' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
+            <div class="grid-item"><label> <input id='16' class="input" type="text" onkeyup="validate(this);"/>
+            </label></div>
         </div>
-        <input type="submit" value="Submit">
+        <input type="submit" value="submit" onclick="updateText()"/>
+
     </form>
 
     <p id="finalString"></p>

@@ -5,7 +5,17 @@ function validate(input){
 let allLetters = "";
 
 for (let k = 1; k < 17; k++) {
-    allLetters += document.getElementById(k.toString()).value;
+    allLetters = allLetters + document.getElementById(k.toString()).value;
+    console.log(k.toString())
 }
 
-document.getElementById("finalString").innerHTML = 'allLetters';
+function submitForm(event){
+
+    //Preventing page refresh
+    event.preventDefault();
+}
+
+function updateText () {
+    document.getElementById("letters").addEventListener('submit', submitForm);
+    document.getElementById('finalString').innerHTML = 'allLetters';
+}
