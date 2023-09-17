@@ -1,3 +1,4 @@
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,28 +8,38 @@ import java.util.List;
 public class Main {
     static ArrayList<String> validWords = new ArrayList<>();
     // Define the dimensions of the 2D array
-    private static char[][] grid = {
-            {'R', 'E', 'A', 'G', 'F'},
-            {'C', 'I', 'U', 'F', 'A'},
-            {'V', 'G', 'K', 'A', 'E'},
-            {'A', 'B', 'C', 'D', 'T'},
-            {'A', 'B', 'C', 'D', 'T'}
-    };
+    private static char[][] grid = new char[4][4];
 
     public static void main(String[] args) {
-        Trie dictionaryTrie = new Trie();
-        loadDictionary(dictionaryTrie, "/Users/alexthepark/Downloads/dictionary.txt");
+        Scanner scan = new Scanner(System.in);
 
-        // Now, 'dictionaryTrie' contains all the English words from the file
-        System.out.println("Total English words: " + dictionaryTrie.size());
+        System.out.println("Welcome to the Word Hunt Solver!");
+        System.out.println("Please input your 4x4 Word Hunt board as a 16 character string with no spaces, going from left to right and starting with the first row going down.");
 
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[i].length; j++) {
-                traverse(grid, i, j, new StringBuilder(), dictionaryTrie.getRoot());
+        String str = scan.nextLine();
+
+        if (str.length()!=16){
+            System.out.println("Sorry, your string was not 16 characters long. Please try again.");
+        } else {
+            for (int i = 0; i<4; i++){
+                for (int j = 0; j<4; j++){
+                    grid[i][j] = str.charAt(j*4 + i);
+                }
             }
+            Trie dictionaryTrie = new Trie();
+            loadDictionary(dictionaryTrie, "/Users/alexthepark/Downloads/dictionary.txt");
+
+            for (int i = 0; i < grid.length; i++) {
+                for (int j = 0; j < grid[i].length; j++) {
+                    traverse(grid, i, j, new StringBuilder(), dictionaryTrie.getRoot());
+                }
+            }
+
+            printWords(validWords);
+
         }
 
-        printWords(validWords);
+
     }
 
     private static void traverse(char[][] grid, int row, int col, StringBuilder path, TrieNode node) {
